@@ -30,18 +30,24 @@ A deterministic smart contract cannot fetch arbitrary webpages and reason about 
 
 ## Live Studionet deployment
 
-The original verified deployment remains live on GenLayer Studionet:
+This standalone repository deployed and verified SourceVerifier on GenLayer Studionet:
 
-- Contract: `0x10F95C997358EfbFfc586979ED8E4c6568609B5c`
-- Explorer: https://explorer-studio.genlayer.com/address/0x10F95C997358EfbFfc586979ED8E4c6568609B5c
-- Live verification tx: `0xdff346bd4b4bd87546b577879c25f0f9ee805e2dd1d629d4263776aef6d2086d`
-- Transaction: https://explorer-studio.genlayer.com/tx/0xdff346bd4b4bd87546b577879c25f0f9ee805e2dd1d629d4263776aef6d2086d
+- Contract: `0x393a60abeCaB5caCe6b084387AfBbA58c8227D1A`
+- Explorer: https://explorer-studio.genlayer.com/address/0x393a60abeCaB5caCe6b084387AfBbA58c8227D1A
+- Live verification tx: `0xde4bfb0a2143562e434490445fb7b55184a8b2a886fa54b4c13a90d8964b9303`
+- Transaction: https://explorer-studio.genlayer.com/tx/0xde4bfb0a2143562e434490445fb7b55184a8b2a886fa54b4c13a90d8964b9303
+- Workflow: https://github.com/maho0638/sourceverifier-genlayer/actions/runs/35791814646
 
 Verified live result:
 
 - verdict: `supported`
-- confidence: `98/100`
+- confidence: `100/100`
 - sources agreeing: `2/2`
 - consensus: `MAJORITY_AGREE`
 
-This repository also includes an independent Studionet workflow so the contract can be redeployed and verified again from this standalone repository.
+## Files
+
+- Contract: `contracts/source_verifier.py`
+- Direct tests: `tests/direct/test_source_verifier.py`
+- Live Studionet test: `tests/integration/test_source_verifier_studionet.py`
+- Submission evidence: `SUBMISSION.md`

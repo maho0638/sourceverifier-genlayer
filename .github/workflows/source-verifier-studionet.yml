@@ -1,6 +1,9 @@
 name: SourceVerifier Studionet
 
 on:
+  push:
+    paths:
+      - ".github/workflows/source-verifier-studionet.yml"
   workflow_dispatch:
 
 jobs:

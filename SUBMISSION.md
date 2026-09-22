@@ -8,7 +8,7 @@ SourceVerifier is a reusable GenLayer Intelligent Contract that verifies a factu
 
 https://github.com/maho0638/sourceverifier-genlayer
 
-## Contract
+## Contract source
 
 https://github.com/maho0638/sourceverifier-genlayer/blob/main/contracts/source_verifier.py
 
@@ -21,19 +21,38 @@ The contract:
 - independently re-runs the evaluation in validator execution,
 - reaches consensus over a non-deterministic result.
 
-## Live verified deployment
+## Tests
 
-The previously verified Studionet deployment of this exact contract logic remains live:
+https://github.com/maho0638/sourceverifier-genlayer/blob/main/tests/direct/test_source_verifier.py
 
-- Contract: https://explorer-studio.genlayer.com/address/0x10F95C997358EfbFfc586979ED8E4c6568609B5c
-- Address: `0x10F95C997358EfbFfc586979ED8E4c6568609B5c`
-- Live tx: https://explorer-studio.genlayer.com/tx/0xdff346bd4b4bd87546b577879c25f0f9ee805e2dd1d629d4263776aef6d2086d
-- Tx hash: `0xdff346bd4b4bd87546b577879c25f0f9ee805e2dd1d629d4263776aef6d2086d`
+## Live Studionet verification
 
-Live result:
+Contract:
+https://explorer-studio.genlayer.com/address/0x393a60abeCaB5caCe6b084387AfBbA58c8227D1A
+
+Contract address:
+`0x393a60abeCaB5caCe6b084387AfBbA58c8227D1A`
+
+Live transaction:
+https://explorer-studio.genlayer.com/tx/0xde4bfb0a2143562e434490445fb7b55184a8b2a886fa54b4c13a90d8964b9303
+
+Transaction hash:
+`0xde4bfb0a2143562e434490445fb7b55184a8b2a886fa54b4c13a90d8964b9303`
+
+Studionet workflow:
+https://github.com/maho0638/sourceverifier-genlayer/actions/runs/35791814646
+
+Live claim:
+`example.com is intended for use in documentation examples.`
+
+Sources:
+- https://example.com
+- https://www.iana.org/help/example-domains
+
+Consensus-backed stored result:
 - verdict: `supported`
-- confidence: `98/100`
+- confidence: `100/100`
 - sources_agree: `2/2`
 - consensus: `MAJORITY_AGREE`
 
-This standalone repository contains its own CI and Studionet workflow so the same contract can be independently retested and redeployed.
+The standalone repository includes direct tests, GenVM lint/validation CI, and a reproducible Studionet deployment workflow.

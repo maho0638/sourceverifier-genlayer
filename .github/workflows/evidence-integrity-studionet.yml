@@ -1,0 +1,24 @@
+name: Evidence Integrity Suite Studionet
+
+on:
+  push:
+    paths:
+      - ".github/workflows/evidence-integrity-studionet.yml"
+  workflow_dispatch:
+
+jobs:
+  live-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: EvidenceQuorum live proof
+        run: gltest tests/integration/test_evidence_quorum_studionet.py -v -s --network studionet
+      - name: CitationAttestor live proof
+        run: gltest tests/integration/test_citation_attestor_studionet.py -v -s --network studionet
+      - name: ChallengeableAttestation live proof
+        run: gltest tests/integration/test_challengeable_attestation_studionet.py -v -s --network studionet

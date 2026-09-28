@@ -15,4 +15,8 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: pytest tests/direct -v
-      - run: genvm-lint check contracts/source_verifier.py
+      - run: |
+          for f in contracts/*.py; do
+            echo "Linting $f"
+            genvm-lint check "$f"
+          done
